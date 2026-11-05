@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reception | MediFlow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="app-layout">
+        
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <span class="logo-icon">⚕️</span>
+                    <span class="logo-text">MediFlow</span>
+                </div>
+                <button id="toggle-sidebar" class="icon-btn">☰</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="reception.html" class="active">
+                    <span class="nav-icon">📋</span> <span class="nav-text">Reception</span>
+                </a>
+                <a href="index.html">
+                    <span class="nav-icon">🚪</span> <span class="nav-text">Sign Out</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Reception Dashboard</h1>
+                <div class="user-profile">
+                    <div class="avatar">JD</div>
+                    <span>Jane Doe</span>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="card stats-card">
+                    <h3>Registered Today</h3>
+                    <p class="stat-number">42</p>
+                </div>
+                <div class="card stats-card">
+                    <h3>Current Token</h3>
+                    <p class="stat-number highlight">A-42</p>
+                </div>
+                <div class="card stats-card">
+                    <h3>Waiting Patients</h3>
+                    <p class="stat-number alert">8</p>
+                </div>
+
+                <div class="card reg-card">
+                    <h3>New Patient Registration</h3>
+                    <form id="reg-form">
+                        <div class="form-group">
+                            <input type="text" id="patient-name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="patient-phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="consultation-type">
+                                <option value="general">General Checkup</option>
+                                <option value="specialist">Specialist</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">Register & Generate Token</button>
+                    </form>
+                </div>
+
+                <div class="card queue-card">
+                    <div class="card-header-flex">
+                        <h3>Patient Waiting Queue</h3>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Token</th>
+                                    <th>Patient Details</th>
+                                    <th>Arrival Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="queue-body">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy | MediFlow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <span class="logo-icon">⚕️</span><span class="logo-text">MediFlow</span>
+                </div>
+                <button id="toggle-sidebar" class="icon-btn">☰</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="pharmacy.html" class="active"><span class="nav-icon">💊</span> <span class="nav-text">Pharmacy</span></a>
+                <a href="index.html"><span class="nav-icon">🚪</span> <span class="nav-text">Sign Out</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Pharmacy Dashboard</h1>
+                <div class="user-profile"><div class="avatar">PH</div><span>Pharmacist</span></div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="card queue-list-card">
+                    <h3>Pending Prescriptions</h3>
+                    <div id="pharmacy-queue" class="queue-list"></div>
+                </div>
+
+                <div class="card active-patient-card">
+                    <div class="card-header-flex">
+                        <h3>Order Details</h3>
+                        <span id="pharmacy-status" class="badge waiting">No Order Selected</span>
+                    </div>
+                    
+                    <div id="pharmacy-patient-details" class="patient-details-grid">
+                        <div class="detail-box"><strong>Patient:</strong> <span id="ph-name">--</span></div>
+                        <div class="detail-box"><strong>Token:</strong> <span id="ph-token">--</span></div>
+                        <div class="detail-box"><strong>Doctor:</strong> <span id="ph-doc">--</span></div>
+                    </div>
+
+                    <h4 style="margin: 20px 0 10px; font-size: 14px; color: var(--text-muted);">Prescribed Medicines</h4>
+                    <div id="medicine-list" class="medicine-list">
+                        <p style="color: var(--text-muted); font-size: 14px;">Select an order to view medicines.</p>
+                    </div>
+
+                    <button class="btn-primary" id="btn-dispense" style="margin-top: 24px;" disabled>Confirm & Dispense Medicines</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

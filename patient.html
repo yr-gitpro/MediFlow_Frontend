@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal | MediFlow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <span class="logo-icon">⚕️</span><span class="logo-text">MediFlow</span>
+                </div>
+                <button id="toggle-sidebar" class="icon-btn">☰</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="patient.html" class="active"><span class="nav-icon">👤</span> <span class="nav-text">My Health</span></a>
+                <a href="index.html"><span class="nav-icon">🚪</span> <span class="nav-text">Sign Out</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>My Health Dashboard</h1>
+                <div class="user-profile"><div class="avatar">RJ</div><span>Robert Johnson</span></div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Reminders & Medications -->
+                <div class="card active-patient-card">
+                    <h3>Today's Medication Reminders</h3>
+                    <div id="patient-reminders" class="medicine-list" style="margin-top: 16px;">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Discomfort Report -->
+                <div class="card queue-list-card">
+                    <h3>Report Discomfort</h3>
+                    <form id="discomfort-form" style="margin-top: 16px;">
+                        <div class="form-group">
+                            <label>How are you feeling?</label>
+                            <select id="pain-level" required>
+                                <option value="mild">Mild Discomfort</option>
+                                <option value="moderate">Moderate Pain</option>
+                                <option value="severe">Severe - Need Follow-up</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Describe your symptoms</label>
+                            <textarea id="symptom-desc" rows="3" placeholder="I am experiencing..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send to Doctor</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
